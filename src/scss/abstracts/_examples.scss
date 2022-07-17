@@ -1,0 +1,26 @@
+$theme-colors: (
+    primary: $red,
+    secondary: $blue,
+    warning: $yellow,
+);
+
+@mixin mobile {
+    @media (min-width: #{$mobile}) {
+        @content;
+    }
+}
+
+@each $color, $value in $theme-colors {
+    .btn-#{$color} {
+        background-color: $value;
+    }
+}
+
+.btn {
+    color: yellow;
+    border-radius: 5px;
+
+    @include mobile {
+        color: green;
+    }
+}

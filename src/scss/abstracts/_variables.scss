@@ -1,0 +1,96 @@
+$red: #ff595e;
+$blue: #0a2463;
+$yellow: #f9cb40;
+
+$cursors: pointer auto inherit;
+
+$theme-colors: (
+    primary: $red,
+    secondary: $blue,
+    warning: $yellow,
+);
+
+$btn-background: #ff595e;
+
+$md: 568px;
+$lg: 768px;
+$xl: 1100px;
+$xxl: 1268px;
+
+@mixin md {
+    @media (min-width: #{$md}) and (max-width: #{$lg}) {
+        @content;
+    }
+}
+@mixin lg {
+    @media (min-width: #{$lg}) {
+        @content;
+    }
+}
+@mixin xl {
+    @media (min-width: #{$xl}) {
+        @content;
+    }
+}
+@mixin xxl {
+    @media (min-width: #{$xxl}) {
+        @content;
+    }
+}
+
+@mixin flex-column-gap($gap) {
+    display: flex;
+    flex-direction: column;
+    row-gap: $gap;
+}
+
+@mixin margin {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@mixin framed-globally($px) {
+    padding-left: calc(var(--main-padding) + $px);
+    padding-right: calc(var(--main-padding) + $px);
+}
+
+@function hextorgb($hex) {
+    @return red($hex), green($hex), blue($hex);
+}
+
+:root {
+    /* colors */
+    --black: #000000;
+    --black-light: #383838;
+    --white: #fff;
+    --white-high: #ebebeb;
+    --secondary: #868686;
+    --secondary-lighter: #cccccc;
+    --secondary-medium-light: #e6e6e6;
+    --secondary-super-light: #f6f6f6;
+    --aux-main: #ffa800;
+    --aux-main-medium: #ffd98f;
+    --aux-main-light: #fcdc9d;
+
+    // filters
+    --royalblue-filter: brightness(0) saturate(100%) invert(33%) sepia(64%)
+        saturate(1371%) hue-rotate(203deg) brightness(100%) contrast(92%);
+
+    --black-filter: brightness(0) saturate(100%) invert(13%) sepia(9%) saturate(0%)
+        hue-rotate(240deg) brightness(107%) contrast(95%);
+
+    // paddings
+    --main-padding: 35px;
+    @include md {
+        --main-padding: 50px;
+    }
+    @include lg {
+        --main-padding: 80px;
+    }
+    @include xl {
+        --main-padding: 150px;
+    }
+    @include xxl {
+        --main-padding: 250px;
+    }
+}

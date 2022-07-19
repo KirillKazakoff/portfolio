@@ -8,6 +8,7 @@ type Props = { src: string; href: string; alt: string; info: ProjectInfoT };
 
 export default function PortfolioItem(props: Props) {
     const lang = useAppSelector(selectLanguage);
+
     const {
         src, href, alt, info,
     } = props;

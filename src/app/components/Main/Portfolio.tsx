@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PortfolioItem from './PortfolioItem';
 import PortfolioItemMain from './PortfolioItemMain';
 
@@ -57,6 +57,10 @@ const portfolio = [
 ];
 
 export default function Portfolio() {
+    useEffect(() => {
+        console.log('hello');
+    });
+
     const items = portfolio.map((item) => {
         const {
             src, alt, href, info, isMain, id,
@@ -71,6 +75,7 @@ export default function Portfolio() {
             />
         );
     });
+
     return (
         <section className='portfolio main-framed'>
             <span className='title title--padding-portfolio'>Portfolio</span>

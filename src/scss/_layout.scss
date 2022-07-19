@@ -74,6 +74,73 @@ body {
 }
 
 // header
+.header__pic {
+    position: relative;
+    display: flex;
+    margin-top: 120px;
+    justify-content: center;
+
+    @include lg {
+        order: 1;
+        margin-top: 0;
+        margin-right: 30px;
+    }
+
+    @include xl {
+        margin-left: -150px;
+    }
+}
+
+.cat-pic {
+    opacity: 0;
+    position: relative;
+
+    @include md {
+        width: 300px;
+        height: 300px;
+    }
+
+    @include lg {
+        width: 215px;
+        height: 220px;
+    }
+
+    &__anim {
+        opacity: 1;
+        animation-name: catFall;
+        animation-duration: 1.5s;
+        animation-timing-function: ease;
+        animation-fill-mode: forwards;
+
+        top: -1000px;
+        left: 0;
+
+        @include lg {
+            top: 0;
+            left: -1000px;
+            animation-name: catRoll;
+        }
+    }
+
+    @keyframes catFall {
+        from {
+            transform: translateY(0);
+        }
+        to {
+            transform: translateY(1000px);
+        }
+    }
+
+    @keyframes catRoll {
+        from {
+            transform: translateX(0);
+        }
+        to {
+            transform: translateX(1000px);
+        }
+    }
+}
+
 .header__nav {
     display: none;
     @include lg {
@@ -89,7 +156,7 @@ body {
 }
 
 .header__container {
-    background-color: black;
+    background-color: var(--secondary);
     background-image: url('../img/backgrounds/xleb-header-mobile2.png');
     background-repeat: no-repeat;
     background-size: cover;
@@ -132,6 +199,7 @@ body {
 
 // greeting
 .greeting {
+    opacity: 0;
     font-family: 'Tahoma';
     display: flex;
     align-items: flex-start;
@@ -143,10 +211,22 @@ body {
     @include md {
         font-size: 28px;
     }
-}
 
-.greeting__hidden {
-    display: none;
+    &__anim {
+        animation-name: greetingShow;
+        animation-duration: 1.5s;
+        animation-timing-function: ease;
+        animation-fill-mode: forwards;
+    }
+
+    @keyframes greetingShow {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
 }
 
 .greeting__item {
@@ -193,6 +273,8 @@ body {
     color: var(--white);
 }
 .switch-lang__border {
+    padding-left: 3px;
+    padding-right: 3px;
     color: var(--white);
 }
 
@@ -208,34 +290,6 @@ body {
 
 .btn-burger__img {
     width: 50px;
-}
-
-.header__pic {
-    display: flex;
-    margin-top: 120px;
-    justify-content: center;
-
-    @include lg {
-        order: 1;
-        margin-top: 0;
-        margin-right: 30px;
-    }
-
-    @include xl {
-        margin-left: -150px;
-    }
-}
-
-.cat-pic {
-    @include md {
-        width: 300px;
-        height: 300px;
-    }
-
-    @include lg {
-        width: 215px;
-        height: 220px;
-    }
 }
 
 // main

@@ -1,11 +1,12 @@
 /* eslint-disable @typescript-eslint/indent */
-
 import { Action, configureStore, ThunkAction } from '@reduxjs/toolkit';
 import languageReducer from './languageSlice';
+import loaderReducer from './loaderSlice';
 
 export const store = configureStore({
     reducer: {
         language: languageReducer,
+        loader: loaderReducer,
     },
 });
 

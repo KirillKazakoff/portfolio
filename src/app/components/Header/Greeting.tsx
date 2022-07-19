@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Greeting() {
     return (
-        <div className='greeting'>
+        <div className='greeting greeting__hidden'>
             <span className='greeting__item greeting__title'> CAT IN BREAD 🍞 </span>
             <span className='greeting__item greeting__myname greeting__item--info'>
                 Kirill Kazakov

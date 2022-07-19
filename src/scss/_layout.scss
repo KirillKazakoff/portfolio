@@ -89,6 +89,7 @@ body {
 }
 
 .header__container {
+    background-color: black;
     background-image: url('../img/backgrounds/xleb-header-mobile2.png');
     background-repeat: no-repeat;
     background-size: cover;
@@ -113,6 +114,14 @@ body {
     }
 }
 
+.header__mobile {
+    background-image: url('../img/backgrounds/xleb-header-mobile2.png');
+}
+
+.header__desktop {
+    background-image: url('../img/backgrounds/xleb-header-desktop.png');
+}
+
 .header__top {
     display: flex;
     @include lg {
@@ -134,6 +143,10 @@ body {
     @include md {
         font-size: 28px;
     }
+}
+
+.greeting__hidden {
+    display: none;
 }
 
 .greeting__item {

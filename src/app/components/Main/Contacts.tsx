@@ -1,12 +1,14 @@
 import React from 'react';
+import { useAppSelector } from '../../redux/reduxHooks';
+import { selectDic } from '../../redux/languageSlice';
 
 export default function Contacts() {
+    const { contacts } = useAppSelector(selectDic);
+
     return (
         <section className='contacts main-framed'>
-            <span className='title title--padding'>Contacts</span>
-            <span className='contacts__desc'>
-                {'Want to know more or just chat? \n You are welcome!'}
-            </span>
+            <span className='title title--padding'>{contacts.title}</span>
+            <span className='contacts__desc'>{contacts.desc}</span>
             <ul className='socials'>
                 <li className='socials__item'>
                     <a

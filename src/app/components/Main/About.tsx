@@ -1,23 +1,24 @@
+/* eslint-disable react/no-array-index-key */
 import React from 'react';
+import { useAppSelector } from '../../redux/reduxHooks';
+import { selectDic } from '../../redux/languageSlice';
 
 export default function About() {
+    const { about } = useAppSelector(selectDic);
+    const pArray = about.text.split(/[\r\n]{2}/);
+
+    const text = pArray.map((p, index) => {
+        return (
+            <p key={index} className='about__text-p'>
+                {p}
+            </p>
+        );
+    });
+
     return (
         <section className='about main-framed'>
-            <span className='title title--padding title--about'>About me</span>
-            <div className='about__text text--info'>
-                <p className='about__text-p'>
-                    {
-                        "I'm a junior frontend developer... Love coding so much... and I'm a rapper as well, bruhhh!"
-                    }
-                </p>
-                <p className='about__text-p'>
-                    {`I've graduated the course on Netology on program
-                    “Frontend-developer from scratch”`}
-                </p>
-                <p className='about__text-p'>
-                    {"Generally speaking, I'm great person... \n Employ me, please!"}
-                </p>
-            </div>
+            <span className='title title--padding title--about'>{about.title}</span>
+            <div className='about__text text--info'>{text}</div>
         </section>
     );
 }

@@ -1,19 +1,15 @@
 import React from 'react';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
-import { ProjectInfoT } from '../../types/types';
-import { selectLanguage } from '../../redux/languageSlice';
-import { useAppSelector } from '../../redux/reduxHooks';
+import { CommonT } from '../../types/types';
 
-type Props = { src: string; href: string; alt: string; info: ProjectInfoT };
+type Props = { src: string; href: string; alt: string; info: CommonT };
 
 export default function PortfolioItem(props: Props) {
-    const lang = useAppSelector(selectLanguage);
-
     const {
         src, href, alt, info,
     } = props;
 
-    const { desc, title } = info[lang];
+    const { desc, title } = info;
     return (
         <li className='portfolio__item'>
             <LazyLoadImage

@@ -1,23 +1,15 @@
 import React from 'react';
 import { LazyLoadImage } from 'react-lazy-load-image-component';
-import { ProjectInfoT } from '../../types/types';
-import { selectLanguage } from '../../redux/languageSlice';
-import { useAppSelector } from '../../redux/reduxHooks';
+import { CommonT } from '../../types/types';
 
-type Props = { src: string; href: string; alt: string; info: ProjectInfoT };
+type Props = { src: string; href: string; alt: string; info: CommonT };
 
 export default function PortfolioItemMain(props: Props) {
-    const lang = useAppSelector(selectLanguage);
     const {
         src, href, alt, info,
     } = props;
 
-    const mainTitle: { [key: string]: string } = {
-        eng: 'Main Project',
-        rus: 'Главный Проект',
-    };
-
-    const { desc, title } = info[lang];
+    const { desc, title, main } = info;
     return (
         <li className='portfolio__item'>
             <LazyLoadImage
@@ -27,9 +19,7 @@ export default function PortfolioItemMain(props: Props) {
                 threshold={700}
             />
             <div className='project__info'>
-                <span className='project__title project__title-main'>
-                    {mainTitle[lang]}
-                </span>
+                <span className='project__title project__title-main'>{main}</span>
                 <a className='project__link link' href={href}>
                     <span className='project__title'>{title}</span>
                     <span className='project__desc'>{desc}</span>

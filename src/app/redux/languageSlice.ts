@@ -1,5 +1,6 @@
 /* eslint-disable no-param-reassign */
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { myDictionary } from './dictionary';
 import type { RootState } from './store';
 
 const initialState = {
@@ -17,6 +18,7 @@ export const languageSlice = createSlice({
 });
 
 export const { setLanguage } = languageSlice.actions;
+export const selectDic = (state: RootState) => myDictionary[state.language.value];
 export const selectLanguage = (state: RootState) => state.language.value;
 
 export default languageSlice.reducer;

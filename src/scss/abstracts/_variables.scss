@@ -13,17 +13,23 @@ $theme-colors: (
 $btn-background: #ff595e;
 
 $md: 568px;
-$lg: 768px;
+$lg: 790px;
 $xl: 1100px;
 $xxl: 1268px;
 
-@mixin md {
-    @media (min-width: #{$md}) and (max-width: #{$lg}) {
+// @mixin md {
+//     @media (min-width: #{$md}) and (max-width: #{$lg}) {
+//         @content;
+//     }
+// }
+
+@mixin lg {
+    @media (min-width: #{$lg}) {
         @content;
     }
 }
-@mixin lg {
-    @media (min-width: #{$lg}) {
+@mixin md {
+    @media (min-width: #{$md}) {
         @content;
     }
 }
@@ -78,6 +84,10 @@ $xxl: 1268px;
 
     --black-filter: brightness(0) saturate(100%) invert(13%) sepia(9%) saturate(0%)
         hue-rotate(240deg) brightness(107%) contrast(95%);
+
+    //timings
+    --cat-animation-duration: 0.1s;
+    --greeting-show-duration: 0.1s;
 
     // paddings
     --main-padding: 35px;

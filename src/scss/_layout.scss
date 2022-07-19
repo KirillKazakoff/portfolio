@@ -20,6 +20,12 @@ body {
     display: flex;
 }
 
+.first-letter {
+    &::first-letter {
+        text-transform: uppercase;
+    }
+}
+
 // popup
 .popup {
     position: absolute;
@@ -49,6 +55,7 @@ body {
 }
 
 .nav__item {
+    white-space: nowrap;
     text-align: center;
     flex: 1;
     color: var(--secondary);
@@ -63,7 +70,7 @@ body {
 }
 
 .nav__item:nth-child(n + 2) {
-    margin-left: 15px;
+    margin-left: 10px;
 }
 
 .body__container {
@@ -74,6 +81,25 @@ body {
 }
 
 // header
+.header__nav {
+    display: none;
+    @include lg {
+        height: 90px;
+        align-items: center;
+        display: flex;
+        flex-direction: row;
+        row-gap: 0;
+        column-gap: 10%;
+        font-size: 20px;
+        letter-spacing: 0.05em;
+    }
+    @media (min-width: #{$lg}) and (max-width: 900px) {
+        padding-left: 45px;
+        padding-right: 45px;
+        column-gap: 8%;
+    }
+}
+
 .header__pic {
     position: relative;
     display: flex;
@@ -108,7 +134,7 @@ body {
     &__anim {
         opacity: 1;
         animation-name: catFall;
-        animation-duration: 1.5s;
+        animation-duration: var(--cat-animation-duration);
         animation-timing-function: ease;
         animation-fill-mode: forwards;
 
@@ -138,20 +164,6 @@ body {
         to {
             transform: translateX(1000px);
         }
-    }
-}
-
-.header__nav {
-    display: none;
-    @include lg {
-        height: 90px;
-        align-items: center;
-        display: flex;
-        flex-direction: row;
-        row-gap: 0;
-        column-gap: 10%;
-        font-size: 20px;
-        letter-spacing: 0.05em;
     }
 }
 
@@ -214,7 +226,7 @@ body {
 
     &__anim {
         animation-name: greetingShow;
-        animation-duration: 1.5s;
+        animation-duration: var(--greeting-show-duration);
         animation-timing-function: ease;
         animation-fill-mode: forwards;
     }
@@ -236,10 +248,11 @@ body {
 }
 
 .greeting__title {
+    text-transform: uppercase;
     padding-top: 8px;
     padding-right: 5px;
     padding-bottom: 5px;
-    // font-size: 24px;
+
     font-size: 1em;
     color: var(--white);
 }
@@ -262,6 +275,7 @@ body {
 }
 
 .switch-lang__option {
+    display: inline-block;
     text-transform: uppercase;
 }
 
@@ -303,6 +317,10 @@ body {
     font-weight: bold;
     display: block;
     text-align: center;
+
+    &::first-letter {
+        text-transform: uppercase;
+    }
 }
 
 .title--padding {
@@ -344,8 +362,9 @@ body {
     width: 90%;
     max-width: 480px;
     white-space: pre-line;
+    line-height: 22px;
 
-    @include lg {
+    @include md {
         font-size: 20px;
         row-gap: 60px;
         max-width: 540px;
@@ -363,8 +382,9 @@ body {
     @include flex-column-gap(20px);
     @include margin;
     max-width: 480px;
+    line-height: 22px;
 
-    @include lg {
+    @include md {
         font-size: 20px;
         max-width: 540px;
         line-height: 30px;
@@ -423,14 +443,16 @@ body {
     margin-bottom: 5px;
     color: var(--black-light);
     display: block;
-    @include lg {
+
+    @include md {
         font-size: 24px;
     }
 }
 
 .project__link {
     font-weight: 400;
-    @include lg {
+
+    @include md {
         font-size: 22px;
     }
 }
@@ -471,10 +493,13 @@ body {
     white-space: pre-line;
     text-align: center;
     margin-bottom: 45px;
+    line-height: 25px;
+    font-size: 18px;
 
-    @include lg {
+    @include md {
         font-size: 22px;
         margin-bottom: 70px;
+        line-height: 30px;
     }
 }
 
@@ -510,8 +535,12 @@ body {
     font-weight: 200;
     max-width: 300px;
     line-height: 28px;
+
+    max-width: 270px;
+    white-space: pre-line;
+
     @include margin;
-    @include lg {
+    @include md {
         font-size: 18px;
     }
 }

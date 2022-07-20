@@ -21,6 +21,7 @@ export default function Header() {
         cat.current.addEventListener('load', imgLoadHandler);
         cat.current.addEventListener('animationend', animEndHandler);
 
+        cat.current.src = './img/others/kot-mobile.png';
         const currentCat = cat.current;
         return () => {
             currentCat.removeEventListener('load', imgLoadHandler);
@@ -39,9 +40,7 @@ export default function Header() {
 
                 <div className='header__pic'>
                     <img
-                        ref={cat}
-                        className='cat-pic'
-                        src='./img/others/kot-mobile.png'
+                        ref={cat} className='cat-pic'
                         alt='cat'
                     />
                 </div>

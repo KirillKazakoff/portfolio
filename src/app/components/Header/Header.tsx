@@ -2,7 +2,7 @@
 import React, { useEffect, useRef } from 'react';
 import Burger from './Burger';
 import Greeting from './Greeting';
-import Nav from './Nav';
+import Nav from './HeaderNav';
 import { useAppDispatch } from '../../redux/reduxHooks';
 import { setAnimationStatus } from '../../redux/loaderSlice';
 
@@ -29,7 +29,7 @@ export default function Header() {
     }, [dispatch]);
 
     return (
-        <header className='header'>
+        <header className='header' id='main'>
             <Nav />
             <div className='header__container main-framed'>
                 <div className='header__top'>

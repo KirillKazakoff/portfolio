@@ -15,7 +15,7 @@ export default function Greeting() {
         const afterHandler = () => current.classList.add('greeting__anim');
 
         if (animationStatus === 'loaded') {
-            setTimeout(afterHandler, 100);
+            setTimeout(afterHandler, 200);
         }
     }, [animationStatus]);
 

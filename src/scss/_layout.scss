@@ -28,7 +28,7 @@ body {
 
 // popup
 .popup {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
 
@@ -47,16 +47,25 @@ body {
     display: none;
 }
 
+.cross-mark {
+    &:hover {
+        filter: var(--red-filter);
+    }
+}
+
 .nav {
     @include flex-column-gap(50px);
     font-family: 'Jura';
     font-size: 34px;
     font-weight: 400;
+
+    @include lg {
+        text-align: center;
+    }
 }
 
 .nav__item {
     white-space: nowrap;
-    text-align: center;
     flex: 1;
     color: var(--secondary);
 
@@ -70,7 +79,9 @@ body {
 }
 
 .nav__item:nth-child(n + 2) {
-    margin-left: 10px;
+    @include lg {
+        margin-left: 10px;
+    }
 }
 
 .body__container {
@@ -180,7 +191,7 @@ body {
     padding-bottom: 60px;
 
     @include lg {
-        padding-top: 80px;
+        padding-top: 75px;
         padding-bottom: 80px;
         background-image: url('../img/backgrounds/xleb-header-desktop.png');
         min-height: 450px;
@@ -211,6 +222,7 @@ body {
 
 // greeting
 .greeting {
+    width: 275px;
     opacity: 0;
     font-family: 'Tahoma';
     display: flex;
@@ -277,15 +289,18 @@ body {
 .switch-lang__option {
     display: inline-block;
     text-transform: uppercase;
-}
+    cursor: pointer;
 
-.switch-lang__option {
     color: var(--secondary);
+    &:hover:not(&--active) {
+        color: var(--aux-main);
+    }
 }
 
 .switch-lang__option--active {
     color: var(--white);
 }
+
 .switch-lang__border {
     padding-left: 3px;
     padding-right: 3px;
@@ -296,6 +311,10 @@ body {
     margin-left: auto;
     margin-top: 10px;
     align-self: flex-start;
+
+    &:hover {
+        filter: var(--aux-main-filter);
+    }
 
     @include lg {
         display: none;
@@ -533,7 +552,6 @@ body {
     display: block;
     text-align: center;
     font-weight: 200;
-    max-width: 300px;
     line-height: 28px;
 
     max-width: 270px;
@@ -541,6 +559,7 @@ body {
 
     @include margin;
     @include md {
+        max-width: 300px;
         font-size: 18px;
     }
 }

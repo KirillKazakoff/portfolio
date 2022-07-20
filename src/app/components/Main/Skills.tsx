@@ -15,7 +15,7 @@ export default function Skills() {
     });
 
     return (
-        <section className='skills main-framed'>
+        <section className='skills main-framed' id='skills'>
             <span className='title title--padding'>{skills.title}</span>
             <ul className='skills__list text--info'>{skillsHtml}</ul>
         </section>

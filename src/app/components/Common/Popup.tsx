@@ -1,39 +1,25 @@
 import React from 'react';
+import NavItems from './NavItems';
+import { useAppSelector, useAppDispatch } from '../../redux/reduxHooks';
+import { hidePopup, selectPopupStatus } from '../../redux/popupSlice';
 
 export default function Popup() {
+    const dispatch = useAppDispatch();
+    const onClick = () => dispatch(hidePopup());
+    const popupIsHidden = useAppSelector(selectPopupStatus);
+
+    if (popupIsHidden) return null;
     return (
-        <div className='popup main-framed popup--hidden'>
+        <div className='popup main-framed'>
             <ul className='nav'>
-                <li className='nav__item'>
-                    <a className='nav__link' href='/#'>
-                        Home
-                    </a>
-                </li>
-                <li className='nav__item'>
-                    <a className='nav__link' href='/#'>
-                        About me
-                    </a>
-                </li>
-                <li className='nav__item'>
-                    <a className='nav__link' href='/#'>
-                        Skills
-                    </a>
-                </li>
-                <li className='nav__item'>
-                    <a className='nav__link' href='/#'>
-                        Portfolio
-                    </a>
-                </li>
-                <li className='nav__item'>
-                    <a className='nav__link' href='/#'>
-                        Contacts
-                    </a>
-                </li>
+                <NavItems />
             </ul>
-            <img
-                className='cross-mark' src='./svg/cross.svg'
-                alt='x'
-            />
+            <button type='button' onClick={onClick}>
+                <img
+                    className='cross-mark' src='./svg/cross.svg'
+                    alt='x'
+                />
+            </button>
         </div>
     );
 }

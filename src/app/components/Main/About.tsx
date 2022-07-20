@@ -16,7 +16,7 @@ export default function About() {
     });
 
     return (
-        <section className='about main-framed'>
+        <section className='about main-framed' id='about-hyper'>
             <span className='title title--padding title--about'>{about.title}</span>
             <div className='about__text text--info'>{text}</div>
         </section>

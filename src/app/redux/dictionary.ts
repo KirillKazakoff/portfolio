@@ -23,7 +23,7 @@ const eng = {
         ],
     },
     portfolio: {
-        title: 'портфолио',
+        title: 'portfolio',
         list: [
             {
                 main: 'Main Project',

@@ -27,8 +27,8 @@ export default function Portfolio() {
     });
 
     return (
-        <section className='portfolio main-framed'>
-            <span className='title title--padding-portfolio'>Portfolio</span>
+        <section className='portfolio main-framed' id='portfolio'>
+            <span className='title title--padding-portfolio'>{portfolio.title}</span>
             <ul className='portfolio__list'>{items}</ul>
         </section>
     );

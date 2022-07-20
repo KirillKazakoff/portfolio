@@ -6,7 +6,7 @@ export default function Contacts() {
     const { contacts } = useAppSelector(selectDic);
 
     return (
-        <section className='contacts main-framed'>
+        <section className='contacts main-framed' id='contacts'>
             <span className='title title--padding'>{contacts.title}</span>
             <span className='contacts__desc'>{contacts.desc}</span>
             <ul className='socials'>

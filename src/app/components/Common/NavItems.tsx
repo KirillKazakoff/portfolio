@@ -11,7 +11,9 @@ export default function NavItems() {
 
     const dispatch = useAppDispatch();
     const onClick = (href: string) => (e: React.SyntheticEvent) => {
+        document.body.classList.remove('body--non-overflow');
         dispatch(hidePopup());
+
         const idEl = document.querySelector(href.substring(1));
         const place = idEl.getBoundingClientRect();
         window.scrollTo({

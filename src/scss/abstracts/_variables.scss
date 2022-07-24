@@ -17,11 +17,11 @@ $lg: 790px;
 $xl: 1100px;
 $xxl: 1268px;
 
-// @mixin md {
-//     @media (min-width: #{$md}) and (max-width: #{$lg}) {
-//         @content;
-//     }
-// }
+@mixin mdOnly {
+    @media (min-width: #{$md}) and (max-width: #{$lg}) {
+        @content;
+    }
+}
 
 @mixin lg {
     @media (min-width: #{$lg}) {

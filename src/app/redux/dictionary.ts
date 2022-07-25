@@ -30,7 +30,7 @@ const eng = {
                 title: 'Railway ticket booking system',
                 desc: 'React-Redux (only PC screen)',
             },
-            { title: 'WhatsAppBot', desc: 'JS-native (only PC screen)' },
+            { title: 'WhatsAppBot', desc: 'JS-Node.js (only PC screen)' },
             { title: 'Site-blog', desc: 'HTML-CSS (adaptive)' },
         ],
     },
@@ -77,7 +77,10 @@ const ru: ContentT = {
                 title: 'Система бронирования ЖД билетов',
                 desc: 'React-Redux (только для ПК мониторов)',
             },
-            { title: 'WhatsAppBot', desc: 'Приложение на нативном JS' },
+            {
+                title: 'WhatsAppBot',
+                desc: 'JS-Node.js (только для ПК мониторов)',
+            },
             {
                 title: 'Сайт-блог',
                 desc: 'HTML-CSS адаптивная верстка',

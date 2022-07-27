@@ -38,6 +38,7 @@
         "@types/luxon": "^2.0.9",
         "@types/react-lazy-load-image-component": "^1.5.2",
         "@types/react-router-hash-link": "^2.4.5",
+        "@types/smoothscroll-polyfill": "^0.3.1",
         "@typescript-eslint/eslint-plugin": "^5.4.0",
         "@typescript-eslint/parser": "^5.4.0",
         "babel-loader": "^8.2.3",
